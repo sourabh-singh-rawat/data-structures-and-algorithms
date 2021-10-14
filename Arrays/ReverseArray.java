@@ -2,29 +2,26 @@ class ReverseArray {
     public static void main(String args[]) { 
         // driver code
         int[] array = { 1, 2, 3, 4, 5, 6}; // input
-        int[] reversedArray = new int[6]; // reversed output
         
         printArray(array);
 
-        reversedArray = reverseArrayIterative(array);        
+        reverseArrayIterative(array);        
         System.out.println("Reversed array is ");
-        printArray(reversedArray);
+        printArray(array);
     }
 
-    public static int[] reverseArrayIterative(int[] arr) {
-        int start = 0; // 0
-        int end = arr.length - 1; // 5
+    public static void reverseArrayIterative(int[] arr) {
+        int start = 0;
+        int end = arr.length - 1;
 
-        while(start < end) { // condition to check before swapping
+        while(start < end) {
             int temp = arr[end];
-            arr[end] = arr[start]; // arr[5] = arr[0] // arr[5] = 0
+            arr[end] = arr[start]; 
             arr[start] = temp;
 
             start++;
             end--;
         }
-
-        return arr;
     }
 
     public static void printArray(int[] arr) {
