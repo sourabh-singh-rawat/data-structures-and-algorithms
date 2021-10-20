@@ -15,8 +15,8 @@ class MaximumAndMinimum {
 
     public static MinMax minMaxLinearSearch(int[] arr) {
         MinMax p = new MinMax();
-        // initializing p.max and p.min
 
+        // initializing p.max and p.min
         p.min = arr[0];
         p.max = arr[0];
 
