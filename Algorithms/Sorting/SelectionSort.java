@@ -9,10 +9,6 @@ class SelectionSort {
     }
 
     public static void selectionSort(int[] arr) {
-        // 4, 3, 2, 1
-        // 1, 3, 2, 4
-        // 1, 2, 3, 4
-
         for (int i = 0; i < arr.length; i++) {
                 
             int min_value = arr[i];
