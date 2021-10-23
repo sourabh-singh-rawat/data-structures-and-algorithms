@@ -5,29 +5,23 @@ class InsertionSort {
         printArray(arr);
         System.out.println("\nSorted using Insertion Sort: ");
         insertionSort(arr);
-        printArray(arr);   
-    }     
-
+        printArray(arr);
+    }
+      
     public static void insertionSort(int[] arr) {
-        // iterate over each array index
-        for (int i = 0; i < arr.length; i++) {
-            if (i == 0) continue; // don't do anything with i=0;
+        int len = arr.length;
 
-            // while arr[i] < arr[i - 1] // note i = 1, 2, 3, 4
-            while (arr[i] < arr[i-1]) { // arr[1] < arr[0]
-                printArray(arr);
-                System.out.println("i: " + i);
+        for (int i = 1; i < len; i++) {
+            int curr_value = arr[i];
+            int prev_index = i-1;
 
-                // swap
-                int temp = arr[i];
-                arr[i] = arr[i-1];
-                arr[i-1] = temp;
-
-                i--;
-
-                if (i == 0) // no need to anything with i=0
-                    break;
+            // shift the previous index values to right
+            while(prev_index>=0 && arr[prev_index] > curr_value ) {
+                arr[prev_index+1]=arr[prev_index];
+                prev_index--;
             }
+
+            arr[prev_index+1] = curr_value;
         }
     }
 
