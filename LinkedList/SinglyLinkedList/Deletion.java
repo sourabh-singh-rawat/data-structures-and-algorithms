@@ -1,6 +1,6 @@
-class ListDeletion {
+class Deletion {
     public static void main(String[] args) {
-        List list = new List();
+        LinkedList list = new LinkedList();
 
         list.deletePosition(1);
         list.push(5);
@@ -8,18 +8,19 @@ class ListDeletion {
         list.push(3);
         list.push(2);
         list.push(1);
-        
+
         list.print();
         list.deletePosition(4);
         list.print();
     }
 
-    static class List {
+    static class LinkedList {
         Node head;
-        
+
         class Node {
             int data;
             Node next;
+
             Node(int d) {
                 this.data = d;
                 this.next = null;
@@ -38,24 +39,24 @@ class ListDeletion {
                 System.out.println("cannot delele list is empty");
                 return;
             }
-            
+
             Node curr = this.head;
             Node prev = null;
             // list not empty
             // iterate over list till we reach position
-            for(int i = 0; curr != null && i < position ; i++) {
+            for (int i = 0; curr != null && i < position; i++) {
                 prev = curr;
                 curr = curr.next;
             }
 
             // position more than no of nodes
-            if (curr==null) {
+            if (curr == null) {
                 System.out.println("Position out of bound");
                 return;
             }
 
             // delete first value
-            if (prev==null) { 
+            if (prev == null) {
                 this.head = this.head.next;
                 return;
             }
@@ -66,7 +67,7 @@ class ListDeletion {
 
         void deleteValue(int value) {
             // check if list is empty
-            if (this.head==null) {
+            if (this.head == null) {
                 System.out.println("Cannot delete. List is empty");
                 return;
             }
@@ -76,21 +77,21 @@ class ListDeletion {
             Node curr = this.head;
             Node prev = null;
 
-            while(curr!=null) {
+            while (curr != null) {
                 if (curr.data == value) {
                     break; // curr value is the value where data is found
                 }
                 prev = curr;
                 curr = curr.next;
             }
-            
-            if (curr==null) {
+
+            if (curr == null) {
                 System.out.println("Cannot delete. Item not found in the list.");
                 return;
             }
 
             // item to be deleted is the first item
-            if (prev==null) { 
+            if (prev == null) {
                 this.head = null;
                 return;
             }
@@ -101,15 +102,15 @@ class ListDeletion {
 
         void print() {
             Node curr = this.head;
-    
+
             // list empty
-            if (curr==null) {
+            if (curr == null) {
                 System.out.println("List is empty.");
                 return;
             }
-    
+
             // list not empty
-            while(curr!=null) {
+            while (curr != null) {
                 System.out.print(curr.data + ", ");
                 curr = curr.next;
             }
@@ -117,5 +118,5 @@ class ListDeletion {
             System.out.println("");
         }
     }
-    
+
 }

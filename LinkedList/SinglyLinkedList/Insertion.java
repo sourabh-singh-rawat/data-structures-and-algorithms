@@ -1,4 +1,4 @@
-class ListInsertion {
+class Insertion {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
 
@@ -12,11 +12,11 @@ class ListInsertion {
 
     static class LinkedList {
         Node head;
-        
+
         class Node {
             int data;
             Node next;
-            
+
             Node(int data) {
                 this.data = data;
                 this.next = null;
@@ -28,7 +28,7 @@ class ListInsertion {
             new_node.next = this.head;
             this.head = new_node;
         }
-        
+
         void append(int data) {
             Node new_node = new Node(data);
 
@@ -37,15 +37,15 @@ class ListInsertion {
                 this.head = new_node;
                 return;
             }
-            
+
             // list not empty so find the last node
             Node curr = this.head;
-            while(curr.next != null) {
+            while (curr.next != null) {
                 curr = curr.next;
             }
             curr.next = new_node;
         }
-        
+
         void print() {
             Node curr = this.head;
 
@@ -56,7 +56,7 @@ class ListInsertion {
             }
 
             // iterate over the list to print data in each node.
-            while(curr!=null) {
+            while (curr != null) {
                 System.out.print(curr.data + ", ");
                 curr = curr.next;
             }
