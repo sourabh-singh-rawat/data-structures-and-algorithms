@@ -1,21 +1,21 @@
 class SelectionSort {
     public static void main(String[] args) {
         int[] arr = { 5, 4, 3, 2, 1 };
-        
+
         printArray(arr);
         System.out.println("\nSorted using Selection Sort: ");
-        selectionSort(arr); 
+        selectionSort(arr);
         printArray(arr);
     }
 
     public static void selectionSort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
-                
+
             int min_value = arr[i];
             int min_value_index = i;
 
             // find the smallest value and its index in the array
-            for(int j = i; j < arr.length; j++) {
+            for (int j = i; j < arr.length; j++) {
                 if (arr[j] < min_value) {
                     // new min
                     min_value = arr[j];

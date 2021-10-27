@@ -48,8 +48,7 @@ public class Length {
         }
 
         void recursiveLength() {
-            // System.out.println("Length: " + recursiveLengthInner(head));
-
+            System.out.println("Length: " + recursiveLengthInner(head));
         }
 
         int recursiveLengthInner(Node head) {
