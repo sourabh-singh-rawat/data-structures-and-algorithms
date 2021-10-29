@@ -1,6 +1,6 @@
 class RearrangeArray {
     public static void main(String[] args) {
-        int[] arr = {-1, -1, 6, 1, 9, 3, 2, -1, 4, -1};
+        int[] arr = { -1, -1, 6, 1, 9, 3, 2, -1, 4, -1 };
         printArray(arr);
         System.out.println("");
         printArray(rearrangeArray(arr));
@@ -14,8 +14,7 @@ class RearrangeArray {
                 if (i == arr[j]) {
                     newArr[i] = i;
                     break;
-                }
-                else
+                } else
                     newArr[i] = -1;
             }
         }
