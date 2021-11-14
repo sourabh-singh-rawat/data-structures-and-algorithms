@@ -9,7 +9,6 @@ public class Swap {
         push(list, 1);
 
         swap(list, 1, 6);
-        System.out.println("\n");
         print(list);
     }
 
@@ -99,4 +98,47 @@ public class Swap {
         yNode.next = xNode.next;
         xNode.next = temp;
     }
+
+    // static void swap(LinkedList l1, int x, int y) {
+    // // find values in the list also there refernces
+    // Node cur = l1.head, prev = null;
+    // Node curX = null, prevX = null, curY = null, prevY = null;
+
+    // while (cur != null) {
+    // // find X
+    // if (cur.val == x) { // found
+    // curX = cur;
+    // prevX = prev;
+    // }
+
+    // if (cur.val == y) {
+    // curY = cur;
+    // prevY = prev;
+    // }
+
+    // prev = cur;
+    // cur = cur.next;
+    // }
+
+    // // not found
+    // if (curX == null || curY == null)
+    // return;
+
+    // // x and y found
+    // // head
+    // if (prevX == null) {
+    // prevY.next = curX;
+    // l1.head = curY;
+    // } else if (prevY == null) {
+    // prevX.next = curY;
+    // l1.head = curX;
+    // } else {
+    // prevX.next = curY;
+    // prevY.next = curX;
+    // }
+
+    // Node temp = curY.next;
+    // curY.next = curX.next;
+    // curX.next = temp;
+    // }
 }
