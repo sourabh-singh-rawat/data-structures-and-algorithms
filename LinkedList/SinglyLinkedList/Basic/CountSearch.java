@@ -1,3 +1,7 @@
+package Basic;
+
+import x.*;
+
 public class CountSearch {
     public static void main(String[] args) {
         // 1. Search an element in a Linked
@@ -5,14 +9,16 @@ public class CountSearch {
         // creating a new list
         LinkedList list = new LinkedList();
 
-        push(list, 2);
-        push(list, 31);
-        push(list, 5);
-        push(list, 123);
-        push(list, 2);
-        push(list, 2);
-        print(list);
+        list.push(2);
+        list.push(31);
+        list.push(5);
+        list.push(123);
+        list.push(2);
+        list.push(2);
+        list.print();
         count(list, 2);
+
+        System.out.println("123 is at position: " + search(list, 123));
 
         // System.out.println("\nPosition: " + search(list, 5));
     }
@@ -47,39 +53,4 @@ public class CountSearch {
         return -1;
     }
 
-    static class LinkedList {
-        Node head;
-    }
-
-    static class Node {
-        int val;
-        Node next;
-
-        Node(int val) {
-            this.val = val;
-        }
-    }
-
-    static void push(LinkedList list, int val) {
-        // create a new node
-        Node node = new Node(val);
-
-        // list empty?
-        if (list.head == null) {
-            list.head = node;
-            return;
-        }
-
-        // list not empty
-        node.next = list.head;
-        list.head = node;
-    }
-
-    static void print(LinkedList list) {
-        Node cur = list.head;
-        while (cur != null) {
-            System.out.print(cur.val + ", ");
-            cur = cur.next;
-        }
-    }
 }

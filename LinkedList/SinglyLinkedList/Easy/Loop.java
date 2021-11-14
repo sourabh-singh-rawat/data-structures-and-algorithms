@@ -1,28 +1,18 @@
+package Easy;
+
+import x.*;
+
 class Loop {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
-        push(list, 77);
-        push(list, 31);
-        push(list, 22);
-        push(list, 21);
+        list.push(77);
+        list.push(31);
+        list.push(22);
+        list.push(21);
 
         // 21->22->31->77->21
         list.head.next.next.next.next = list.head;
         loopLength(list);
-    }
-
-    static class LinkedList {
-        Node head;
-    }
-
-    static class Node {
-        int val;
-        Node next;
-        boolean visited;
-
-        Node(int val) {
-            this.val = val;
-        }
     }
 
     static void loopLength(LinkedList list) {
@@ -84,18 +74,4 @@ class Loop {
         return false;
     }
 
-    static void push(LinkedList list, int val) {
-        // create a new node
-        Node node = new Node(val);
-
-        // list empty?
-        if (list.head == null) {
-            list.head = node;
-            return;
-        }
-
-        // list not empty
-        node.next = list.head;
-        list.head = node;
-    }
 }

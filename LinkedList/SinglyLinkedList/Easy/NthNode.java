@@ -1,46 +1,25 @@
+package Easy;
+
+import x.*;
+
 class NthNode {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
-        push(list, 77);
-        push(list, 31);
-        push(list, 22);
-        push(list, 14);
-        push(list, 76);
-        push(list, 83);
-        push(list, 90);
+        list.push(77);
+        list.push(31);
+        list.push(22);
+        list.push(14);
+        list.push(76);
+        list.push(83);
+        list.push(90);
 
         // return nth node of
-        System.out.println(length(list));
-        System.out.println("Value at position: " + printNthNode(list, 5));
         System.out.println("Value at position: " + nthNodeEnd(list, 0));
-    }
-
-    static class LinkedList {
-        Node head;
-    }
-
-    static class Node {
-        int val;
-        Node next;
-
-        Node(int val) {
-            this.val = val;
-        }
-    }
-
-    static int length(LinkedList list) {
-        Node cur = list.head;
-        int count = 0;
-        while (cur != null) {
-            count++;
-            cur = cur.next;
-        }
-
-        return count;
+        System.out.println("Value at position: " + printNthNode(list, 5));
     }
 
     static int nthNodeEnd(LinkedList list, int pos) {
-        int len = length(list);
+        int len = list.length();
         // return
         if (pos < 0 || len <= pos) {
             return -1;
@@ -65,28 +44,5 @@ class NthNode {
         }
 
         return cur.val;
-    }
-
-    static void push(LinkedList list, int val) {
-        // create a new node
-        Node node = new Node(val);
-
-        // list empty?
-        if (list.head == null) {
-            list.head = node;
-            return;
-        }
-
-        // list not empty
-        node.next = list.head;
-        list.head = node;
-    }
-
-    static void print(LinkedList list) {
-        Node cur = list.head;
-        while (cur != null) {
-            System.out.print(cur.val + ", ");
-            cur = cur.next;
-        }
     }
 }

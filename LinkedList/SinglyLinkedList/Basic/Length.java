@@ -1,78 +1,43 @@
+package Basic;
+
+import x.*;
+
 public class Length {
     public static void main(String[] args) {
-        List list = new List();
+        LinkedList list = new LinkedList();
 
         list.push(3);
         list.push(2);
         list.push(1);
         list.print();
-        list.length();
-        list.recursiveLength();
+        System.out.println();
+        System.out.println("Iterative Count: " + length(list));
+        System.out.println("Recursive Count: " + recursiveLength(list.head));
+
     }
 
-    static class List {
-        Node head;
-
-        class Node {
-            int data;
-            Node next;
-
-            Node(int d) {
-                this.data = d;
-            }
+    static int length(LinkedList list) {
+        int count = 0;
+        Node ptr = list.head;
+        while (ptr != null) {
+            count++;
+            ptr = ptr.next;
         }
 
-        void push(int data) {
-            Node node = new Node(data);
-
-            // list empty?
-            if (head == null) {
-                head = node;
-                return;
-            }
-
-            // list not empty
-            node.next = head;
-            head = node;
-        }
-
-        void length() {
-            int count = 0;
-            Node ptr = head;
-            while (ptr != null) {
-                count++;
-                ptr = ptr.next;
-            }
-
-            System.out.println("\nLength: " + count);
-        }
-
-        void recursiveLength() {
-            System.out.println("Length: " + recursiveLengthInner(head));
-        }
-
-        int recursiveLengthInner(Node head) {
-            // base case
-            if (head == null) {
-                return 0;
-            }
-
-            return recursiveLengthInner(head.next) + 1;
-        }
-
-        void print() {
-            // list empty?
-            if (this.head == null) {
-                System.out.println("List is empty.");
-                return;
-            }
-
-            // list not empty
-            Node ptr = this.head;
-            while (ptr != null) {
-                System.out.print(ptr.data + ", ");
-                ptr = ptr.next;
-            }
-        }
+        return count;
     }
+
+    static int recursiveLength(Node head) {
+        return recursiveLengthInner(head);
+    }
+
+    static int recursiveLengthInner(Node head) {
+        // base case
+        if (head == null) {
+            return 0;
+        }
+
+        return recursiveLengthInner(head.next) + 1;
+    }
+
 }

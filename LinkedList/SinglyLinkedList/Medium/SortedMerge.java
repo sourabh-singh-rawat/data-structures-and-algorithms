@@ -1,16 +1,20 @@
+package Medium;
+
+import x.*;
+
 public class SortedMerge {
     public static void main(String[] args) {
         LinkedList l1 = new LinkedList();
-        append(l1, 1);
-        append(l1, 3);
+        l1.append(1);
+        l1.append(3);
 
         LinkedList l2 = new LinkedList();
-        append(l2, 2);
-        append(l2, 4);
-        append(l2, 6);
+        l2.append(2);
+        l2.append(4);
+        l2.append(6);
 
-        print(l1);
-        print(l2);
+        l1.print();
+        l2.print();
         System.out.println("\n");
         mergeSorted(l1, l2);
     }
@@ -45,56 +49,6 @@ public class SortedMerge {
         }
         LinkedList l3 = new LinkedList();
         l3.head = dummyNode.next;
-        print(l3);
-    }
-
-    static class LinkedList {
-        Node head;
-    }
-
-    static class Node {
-        int val;
-        Node next;
-        boolean visited;
-
-        Node(int val) {
-            this.val = val;
-        }
-    }
-
-    static void append(LinkedList list, int val) {
-        // create a new node
-        Node node = new Node(val);
-
-        // list empty?
-        if (list.head == null) {
-            list.head = node;
-            return;
-        }
-
-        // list not empty add from last
-        // find last
-        Node cur = list.head;
-        while (cur.next != null) {
-            cur = cur.next;
-        }
-
-        cur.next = node;
-    }
-
-    static void print(LinkedList list) {
-        Node cur = list.head;
-
-        // if no node
-        if (cur == null) {
-            System.out.println("List is empty");
-            return;
-        }
-
-        // iterate over the list to print data in each node.
-        while (cur != null) {
-            System.out.print(cur.val + ", ");
-            cur = cur.next;
-        }
+        l3.print();
     }
 }

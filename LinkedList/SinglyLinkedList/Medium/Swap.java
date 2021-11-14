@@ -1,60 +1,21 @@
+package Medium;
+
+import x.*;
+
 public class Swap {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
-        push(list, 6);
-        push(list, 5);
-        push(list, 4);
-        push(list, 3);
-        push(list, 2);
-        push(list, 1);
+        list.push(6);
+        list.push(5);
+        list.push(4);
+        list.push(3);
+        list.push(2);
+        list.push(1);
 
+        list.print();
+        System.out.println();
         swap(list, 1, 6);
-        print(list);
-    }
-
-    static class LinkedList {
-        Node head;
-    }
-
-    static class Node {
-        int val;
-        Node next;
-        boolean visited;
-
-        Node(int val) {
-            this.val = val;
-        }
-    }
-
-    static void push(LinkedList list, int val) {
-        // create a new node
-        Node node = new Node(val);
-
-        // list empty?
-        if (list.head == null) {
-            list.head = node;
-            return;
-        }
-
-        // list not empty
-        node.next = list.head;
-        list.head = node;
-    }
-
-    static void print(LinkedList list) {
-        Node curr = list.head;
-
-        // if no node
-        if (list.head == null) {
-            System.out.println("List is empty");
-            return;
-        }
-
-        // iterate over the list to print data in each node.
-        while (curr != null) {
-            System.out.print(curr.val + ", ");
-            curr = curr.next;
-        }
+        list.print();
     }
 
     static void swap(LinkedList list, int x, int y) {

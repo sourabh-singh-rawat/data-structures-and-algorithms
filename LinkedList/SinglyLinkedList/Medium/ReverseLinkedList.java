@@ -1,69 +1,36 @@
+package Medium;
+
 import java.util.Stack;
+
+import x.*;
 
 class ReversedLinkedList {
     public static void main(String[] args) {
         // list
         LinkedList list = new LinkedList();
-        push(list, 4);
-        push(list, 3);
-        push(list, 2);
-        push(list, 1);
+        list.push(4);
+        list.push(3);
+        list.push(2);
+        list.push(1);
         System.out.println("Original List: ");
-        print(list);
+        list.print();
 
         reversal(list);
         System.out.println("\nReversed List: ");
-        print(list);
+        list.print();
 
         LinkedList list2 = new LinkedList();
-        push(list2, 1);
-        push(list2, 2);
-        push(list2, 3);
-        push(list2, 2);
-        push(list2, 1);
+        list2.push(1);
+        list2.push(2);
+        list2.push(3);
+        list2.push(2);
+        list2.push(1);
 
         System.out.println("\n\nList 2");
-        print(list2);
+        list2.print();
         System.out.println(isPalindrome(list2) ? "is palindrome" : "is not Palindrome");
-        print(list2);
+        list2.print();
         System.out.println(isPalindromeReversal(list2) ? "is palindrome" : "is not Palindrome");
-    }
-
-    static class LinkedList {
-        Node head;
-    }
-
-    static class Node {
-        int val;
-        Node next;
-
-        Node(int val) {
-            this.val = val;
-        }
-    }
-
-    static void push(LinkedList list, int val) {
-        // create a node
-        Node node = new Node(val);
-
-        // list empty?
-        if (list.head == null) {
-            list.head = node;
-            return;
-        }
-
-        node.next = list.head;
-        list.head = node;
-    }
-
-    static void print(LinkedList list) {
-        // using cursor to iterate over list
-        Node cur = list.head;
-
-        while (cur != null) {
-            System.out.print(cur.val + ", ");
-            cur = cur.next;
-        }
     }
 
     // linked list reversal

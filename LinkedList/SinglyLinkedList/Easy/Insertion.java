@@ -1,3 +1,5 @@
+package Easy;
+
 class Insertion {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
