@@ -30,6 +30,7 @@ class Intersection {
         while (cur1 != null && cur2 != null) {
             if (cur1.val == cur2.val) {
                 cur3.next = new Node(cur2.val);
+                cur1 = cur1.next;
                 cur2 = cur2.next;
                 cur3 = cur3.next;
             } else if (cur1.val < cur2.val) {
