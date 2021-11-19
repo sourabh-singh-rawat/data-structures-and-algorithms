@@ -45,14 +45,13 @@ public class Swap {
         // update head if x or y are becomming head after swapping
         if (xPrevNode == null) {
             list.head = yNode;
-        } else {
+            yPrevNode.next = xNode;
+        } else if (yPrevNode == null) {
             xPrevNode.next = yNode;
-        }
-
-        if (yPrevNode == null) {
             list.head = xNode;
         } else {
-            yPrevNode.next = xNode;
+            xPrevNode = yNode;
+            yPrevNode = xNode;
         }
 
         Node temp = yNode.next;
