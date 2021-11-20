@@ -1,6 +1,6 @@
 package Easy;
 
-import ListPackage.*;
+import x.*;
 
 public class isCircular {
     public static void main(String[] args) {

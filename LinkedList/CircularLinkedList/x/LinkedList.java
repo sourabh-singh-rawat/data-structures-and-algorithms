@@ -1,4 +1,4 @@
-package ListPackage;
+package x;
 
 public class LinkedList {
     public Node head;

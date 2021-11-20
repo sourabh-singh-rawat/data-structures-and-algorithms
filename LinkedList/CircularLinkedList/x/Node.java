@@ -1,7 +1,7 @@
-package ListPackage;
+package x;
 
 public class Node {
-    int val;
+    public int val;
     public Node next;
 
     Node(int val) {
