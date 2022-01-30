@@ -8,6 +8,11 @@ public class QuickSort {
         System.out.println("Sorted: " + Arrays.toString(arr));
     }
 
+    // quickSort
+    // partition(arr, low, high)
+    // (i=-1) [5(low),1(j=1),3(low),2(high), 4(high, pivot)]
+    // 1. find the index of pivot in the sorted list
+    // 2. all element smaller than pivot are in the left and all element larger than pivot are in right
     public static void quickSort(int[] arr, int low, int high) {
         if (low < high) {
             // {5,1,3,2,4}
