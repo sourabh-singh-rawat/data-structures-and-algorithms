@@ -65,11 +65,13 @@ class Node {
 	}
 }
 
-let list = new LinkedList();
-list.push(1);
-list.push(2);
-list.push(3);
-list.push(32);
-list.push(43);
-list.print();
-console.log(list.length);
+export { Node, LinkedList };
+
+// let list = new LinkedList();
+// list.push(1);
+// list.push(2);
+// list.push(3);
+// list.push(32);
+// list.push(43);
+// list.print();
+// console.log(list.length);
