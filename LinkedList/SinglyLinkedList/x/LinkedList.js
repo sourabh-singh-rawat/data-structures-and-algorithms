@@ -1,6 +1,7 @@
 class LinkedList {
-	constructor() {
+	constructor(arr) {
 		this.head = null;
+		if (arr) for (let item of arr) this.append(item);
 	}
 
 	// adds item to the beginning of the list
