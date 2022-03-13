@@ -47,6 +47,17 @@ class LinkedList {
 		console.log(newArr);
 	}
 
+	printReverse() {
+		let cur = this.head;
+		let arr = [];
+		while (cur != null) {
+			arr.push(cur.val);
+			cur = cur.next;
+		}
+
+		console.log(arr.reverse());
+	}
+
 	get length() {
 		let count = 0;
 		let cur = this.head;
