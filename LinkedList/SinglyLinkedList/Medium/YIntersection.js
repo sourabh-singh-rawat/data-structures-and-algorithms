@@ -1,8 +1,8 @@
 import { Node, LinkedList } from "../x/LinkedList.js";
 
 const list1 = new LinkedList([10, 15, 30]);
-const list2 = new LinkedList([3, 6, 9]);
-list2.head.next.next.next = list1.head.next;
+const list2 = new LinkedList([3, 6, 9, 20, 1]);
+list1.head.next.next.next = list2.head.next.next.next;
 
 list1.print(); // 3, 6, 9, 15, 30
 list2.print(); // 10, 15, 30
