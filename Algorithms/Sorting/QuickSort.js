@@ -1,33 +1,36 @@
-let arr = [ 24, 23, 121, 12, 12121 ];
+const arr = [1, 7, 3, 5, 3, 4];
 
-const partition = (arr, low, high) => {
-	let pivot = arr[high];
-	let i = low - 1; // index of pivot in sorted list
+function swap(arr, x, y) {
+  let temp = arr[x];
+  arr[x] = arr[y];
+  arr[y] = temp;
+}
 
-	for (let j = low; j < arr.length - 1; j++) {
-		if (arr[j] < pivot) {
-			i++;
-			let temp = arr[i];
-			arr[i] = arr[j];
-			arr[j] = temp;
-		}
-	}
+function partition(arr, left, right) {
+  let pivot = arr[right];
+  let pivotIndex = left - 1;
 
-	// swap 5 and 4;
-	let temp = arr[high];
-	arr[high] = arr[i + 1];
-	arr[i + 1] = temp;
+  for (let i = left; i < right; i++) {
+    if (arr[i] < pivot) {
+      pivotIndex++;
+      swap(arr, i, pivotIndex);
+    }
+  }
 
-	return i + 1;
-};
+  pivotIndex++;
+  swap(arr, pivotIndex, right);
+  return pivotIndex;
+}
 
-const quickSort = (arr, low, high) => {
-	if (low < high) {
-		let pi = partition(arr, low, high);
-		quickSort(arr, low, pi - 1);
-		quickSort(arr, pi + 1, high);
-	}
-};
+function quickSort(arr, left, right) {
+  if (left < right) {
+    let pi = partition(arr, left, right);
 
-quickSort(arr, 0, arr.length - 1);
+    quickSort(arr, left, pi - 1);
+    quickSort(arr, pi + 1, right);
+  }
+}
+
 console.log(arr);
+quickSort(arr, 0, arr.length - 1);
+console.log("QuickSorted:", arr);
